@@ -10,7 +10,7 @@ const urlSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  visitHistory: [{ timestamp: { type: Number } }],
+  visitHistory: [{ timestamp: { type: Date, default: Date.now() } }],
   // from the history of the visits, we can store the timestamp of each visit, based on this we can calculate the number of visits in the last 24 hours, last 7 days, last 30 days, and last 90 days (basically total clicks)
 });
 
